@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hello_World.MainPage">
+
+    <TableView Intent="Menu" HasUnevenRows="True">
+        <TableRoot>
+            <!-- Sección para el título de la app -->
+            <TableSection>
+                <ViewCell Height="95">
+                    <StackLayout Margin="15,15,15,15">
+                        <Label Text="Tienda de Videojuegos v1.0" FontAttributes="Bold" FontSize="24" VerticalOptions="Center"/>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+
+            <!-- Sección para las opciones del menú -->
+            <TableSection>
+                <!-- Opción 1: Juegos de Acción -->
+                <ViewCell Height="65">
+                    <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
+                        <Image Source="consola" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="Juegos de Acción" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="ActionGames"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </ViewCell>
+
+                <!-- Opción 2: Juegos de Aventura -->
+                <ViewCell Height="65">
+                    <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
+                        <Image Source="espadas" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="Juegos de Aventura" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="AdventureGames"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </ViewCell>
+
+                <!-- Opción 3: Juegos de Estrategia -->
+                <ViewCell Height="65">
+                    <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
+                        <Image Source="resoluciondeproblemas" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="Juegos de Estrategia" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="StrategyGames"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </ViewCell>
+
+                <!-- Opción 4: Juegos de Deportes -->
+                <ViewCell Height="65">
+                    <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
+                        <Image Source="deportesconbalones" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="Juegos de Deportes" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="SportsGames"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </ViewCell>
+
+                <!-- Opción 5: Ofertas -->
+                <ViewCell Height="65">
+                    <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
+                        <Image Source="ofertaespecial" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="Ofertas" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Offers"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </ViewCell>
+
+                <!-- Opción 6: Carrito -->
+                <ViewCell Height="65">
+                    <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
+                        <Image Source="carritodecompras" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="Carrito" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Cart"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </ViewCell>
+
+                <!-- Opción 7: Perfil -->
+                <ViewCell Height="65">
+                    <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
+                        <Image Source="porfile" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="Perfil" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Profile"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </ViewCell>
+
+                <!-- Opción 8: Soporte -->
+                <ViewCell Height="65">
+                    <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
+                        <Image Source="soptec" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="Soporte" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Support"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
