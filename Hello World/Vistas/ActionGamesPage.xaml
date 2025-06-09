@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Hello_World.Vistas.ActionGamesPage"
-    Title="Juegos de accion">
-    <StackLayout Padding="20">
-        <Label Text="Juegos de Acción" FontSize="24" FontAttributes="Bold"/>
-        <Label Text="Explora los mejores juegos de acción."/>
-    </StackLayout>
+             Title="Juegos de Acción">
+
+    <WebView x:Name="actionGamesWebView"
+             VerticalOptions="Fill"
+             HorizontalOptions="Fill" />
+
 </ContentPage>
+
