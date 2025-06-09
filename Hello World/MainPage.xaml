@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Hello_World.MainPage">
 
-    <TableView Intent="Menu" HasUnevenRows="True">
+    <TableView Intent="Menu">
         <TableRoot>
             <!-- Sección para el título de la app -->
             <TableSection>
@@ -85,7 +85,7 @@
                 <!-- Opción 7: Perfil -->
                 <ViewCell Height="65">
                     <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
-                        <Image Source="porfile" HeightRequest="60" WidthRequest="60"/>
+                        <Image Source="profile" HeightRequest="60" WidthRequest="60"/>
                         <Label Text="Perfil" FontAttributes="Bold" VerticalOptions="Center"/>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Profile"/>
@@ -96,7 +96,7 @@
                 <!-- Opción 8: Soporte -->
                 <ViewCell Height="65">
                     <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
-                        <Image Source="soptec" HeightRequest="60" WidthRequest="60"/>
+                        <Image Source="support" HeightRequest="60" WidthRequest="60"/>
                         <Label Text="Soporte" FontAttributes="Bold" VerticalOptions="Center"/>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Support"/>
