@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Hello_World.Vistas.StrategyGamesPage"
              Title="Juegos De Estrategia">
-    <StackLayout Padding="20">
-        <Label Text="Planea Tu Ataque Antes de que te atrapen." FontSize="24" FontAttributes="Bold"/>
-        <Label Text="Saga Dishonored."/>
-        </StackLayout>
+
+    <WebView x:Name="strategyGamesWebView"
+             VerticalOptions="Fill"
+             HorizontalOptions="Fill" />
+
 </ContentPage>

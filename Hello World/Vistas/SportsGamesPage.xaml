@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Hello_World.Vistas.SportsGamesPage"
              Title="Juegos De Deporte">
-    <StackLayout Padding="20">
-        <Label Text="La Liga Llego a Tu Consola" FontSize="24" FontAttributes="Bold"/>
-        <Label Text="Explora lo mas destacado en futbol y lucha libre."/>
-    </StackLayout>
+
+    <WebView x:Name="sportsGamesWebView"
+             VerticalOptions="Fill"
+             HorizontalOptions="Fill" />
+
 </ContentPage>

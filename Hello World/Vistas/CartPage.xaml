@@ -4,7 +4,7 @@
              x:Class="Hello_World.Vistas.CartPage"
              Title="Carrito">
     <StackLayout Padding="20">
-        <Label Text="Tu Carrito" FontSize="24" FontAttributes="Bold"/>
-        <Label Text="Agrega Productos a Tu Carrito."/>
+        <Label Text="Juegos de Acción" FontSize="24" FontAttributes="Bold"/>
+        <Label Text="Explora los mejores juegos de acción."/>
     </StackLayout>
 </ContentPage>
