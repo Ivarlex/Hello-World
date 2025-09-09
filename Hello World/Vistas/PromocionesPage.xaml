@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:modelos="clr-namespace:Hello_World.Modelos"
+               x:Class="Hello_World.Vistas.PromocionesPage"
+               Title="Promociones Activas">
+    <StackLayout Orientation="Vertical" Padding="20">
+        <DatePicker x:Name="dpkFecha" Date="{Binding FechaSeleccionada}" />
+        <Button x:Name="btnConsultar" Text="Consultar Promociones" Clicked="btnConsultar_Clicked" />
+        <ActivityIndicator x:Name="indicador" IsRunning="False" IsVisible="False" />
+        <ListView x:Name="lstPromociones">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Margin="5">
+                            <Image Source="{Binding Imagen_url}" HeightRequest="100" WidthRequest="100" Aspect="AspectFit" />
+                            <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="Large" />
+                            <Label Text="{Binding Genero}" FontSize="Medium" />
+                            <Label Text="{Binding Descripcion}" FontSize="Small" />
+                            <Label Text="{Binding Precio, StringFormat='Precio Normal: {0:C}'}" FontSize="Medium" />
+                            <Label Text="{Binding Precio, Converter={StaticResource DescuentoConverter}, ConverterParameter={Binding .}, StringFormat='Precio con Descuento: {0:C2}'}" FontSize="Medium" />
+                            <Label Text="{Binding Fecha_inicio, StringFormat='Inicio: {0:dd/MM/yyyy}'}" FontSize="Small" />
+                            <Label Text="{Binding Fecha_fin, StringFormat='Fin: {0:dd/MM/yyyy}'}" FontSize="Small" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

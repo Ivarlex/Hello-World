@@ -12,14 +12,14 @@ namespace Hello_World.Vistas
         public SportsGamesPage()
         {
             InitializeComponent();
-            _servicioWeb = new ServicioWeb();
+            _servicioWeb = ServicioWeb.Instance;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            string url = $"{_servicioWeb.dominio}juegos_deportes.php";
+            string url = $"{_servicioWeb.Domain}juegos_deportes.php";
             sportsGamesWebView.Source = new UrlWebViewSource
             {
                 Url = url

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hello_World.Vistas.LoginPage"
+             Title="Iniciar Sesión">
+    <StackLayout Padding="20" VerticalOptions="Center">
+        <Entry x:Name="txtCorreo" Placeholder="Correo" />
+        <Entry x:Name="txtContrasena" Placeholder="Contraseña" IsPassword="True" />
+        <Button x:Name="btnLogin" Text="Iniciar Sesión" Clicked="btnLogin_Clicked" />
+    </StackLayout>
+</ContentPage>

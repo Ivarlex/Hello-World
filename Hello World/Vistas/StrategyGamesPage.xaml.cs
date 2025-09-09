@@ -1,7 +1,7 @@
 using Microsoft.Maui.Controls;
 using System;
 using System.Threading.Tasks;
-using MenuPrincipal; // Agrega este using
+using MenuPrincipal;
 
 namespace Hello_World.Vistas
 {
@@ -12,20 +12,18 @@ namespace Hello_World.Vistas
         public StrategyGamesPage()
         {
             InitializeComponent();
-            _servicioWeb = new ServicioWeb();
+            _servicioWeb = ServicioWeb.Instance;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            string url = $"{_servicioWeb.dominio}juegos_estrategia.php";
+            string url = $"{_servicioWeb.Domain}juegos_estrategia.php";
             strategyGamesWebView.Source = new UrlWebViewSource
             {
                 Url = url
             };
         }
-
-
     }
 }

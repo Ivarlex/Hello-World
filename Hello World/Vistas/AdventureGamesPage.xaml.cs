@@ -3,7 +3,6 @@ using System;
 using System.Threading.Tasks;
 using MenuPrincipal; // Agrega este using
 
-
 namespace Hello_World.Vistas
 {
     public partial class AdventureGamesPage : ContentPage
@@ -12,15 +11,15 @@ namespace Hello_World.Vistas
 
         public AdventureGamesPage()
         {
-            InitializeComponent(); 
-            _servicioWeb = new ServicioWeb();
+            InitializeComponent();
+            _servicioWeb = ServicioWeb.Instance;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            string url = $"{_servicioWeb.dominio}juegos_Aventura.php";
+            string url = $"{_servicioWeb.Domain}juegos_Aventura.php";
             adventureGamesWebView.Source = new UrlWebViewSource
             {
                 Url = url

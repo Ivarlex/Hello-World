@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Hello_World.Vistas.ProfilePage"
              Title="Perfil">
-    <StackLayout Padding="20">
-        <Label Text="Mi Perfil" FontSize="24" FontAttributes="Bold"/>
+    <StackLayout Padding="20" VerticalOptions="Center">
+        <Label x:Name="lblNombre" FontSize="Large" />
+        <Label x:Name="lblCorreo" FontSize="Medium" />
+        <Button x:Name="btnCerrarSesion" Text="Cerrar Sesión" Clicked="btnCerrarSesion_Clicked" IsVisible="False" />
     </StackLayout>
 </ContentPage>

@@ -1,0 +1,35 @@
+[
+      {
+          "id_juego": 2,
+          "nombre": "The Legend of Zelda: Breath of the Wild",
+          "genero": "Aventura",
+          "descripcion": "Explora un mundo abierto lleno de misterios.",
+          "precio": 59.99,
+          "en_oferta": true,
+          "fecha_inicio": "2025-06-01",
+          "fecha_fin": "2025-06-30",
+          "imagen_url": "https://example.com/images/zelda.jpg"
+      },
+      {
+          "id_juego": 4,
+          "nombre": "FIFA 24",
+          "genero": "Deportes",
+          "descripcion": "Experiencia definitiva de fútbol.",
+          "precio": 69.99,
+          "en_oferta": true,
+          "fecha_inicio": "2025-05-15",
+          "fecha_fin": "2025-06-20",
+          "imagen_url": "https://example.com/images/fifa24.jpg"
+      },
+      {
+          "id_juego": 6,
+          "nombre": "Super Mario Odyssey",
+          "genero": "Plataformas",
+          "descripcion": "Aventura 3D con Mario en nuevos reinos.",
+          "precio": 49.99,
+          "en_oferta": true,
+          "fecha_inicio": "2025-06-10",
+          "fecha_fin": "2025-06-25",
+          "imagen_url": "https://example.com/images/mario_odyssey.jpg"
+      }
+  ]

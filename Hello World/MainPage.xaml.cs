@@ -1,5 +1,6 @@
 ﻿using Hello_World.Vistas;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Storage;
 
 namespace Hello_World;
 
@@ -15,23 +16,26 @@ public partial class MainPage : ContentPage
         if (sender is View view && view.GestureRecognizers[0] is TapGestureRecognizer tapGesture)
         {
             string cellId = tapGesture.CommandParameter?.ToString();
-#if !WINDOWS
-            // Navegación solo para plataformas que soportan PushAsync (Android, iOS, etc.)
+
             switch (cellId)
             {
                 case "ActionGames":
-                    await Navigation.PushAsync(new ActionGamesPage());
+                    await Navigation.PushAsync(
+                        new CategoryWebPage(MenuPrincipal.ServicioWeb.Instance.UrlAction, "Acción"));
                     break;
                 case "AdventureGames":
-                    await Navigation.PushAsync(new AdventureGamesPage());
+                    await Navigation.PushAsync(
+                        new CategoryWebPage(MenuPrincipal.ServicioWeb.Instance.UrlAdventure, "Aventura"));
                     break;
                 case "StrategyGames":
-                    await Navigation.PushAsync(new StrategyGamesPage());
+                    await Navigation.PushAsync(
+                        new CategoryWebPage(MenuPrincipal.ServicioWeb.Instance.UrlStrategy, "Estrategia"));
                     break;
                 case "SportsGames":
-                    await Navigation.PushAsync(new SportsGamesPage());
+                    await Navigation.PushAsync(
+                        new CategoryWebPage(MenuPrincipal.ServicioWeb.Instance.UrlSports, "Deportes"));
                     break;
-                case "Offers":
+                case "Promociones":
                     await Navigation.PushAsync(new OffersPage());
                     break;
                 case "Cart":
@@ -47,10 +51,16 @@ public partial class MainPage : ContentPage
                     await DisplayAlert("Error", "Opción no reconocida", "OK");
                     break;
             }
-#else
-            // Acción alternativa para Windows (por ejemplo, mostrar un mensaje)
-            await DisplayAlert("Windows", $"Función no disponible en Windows. Seleccionaste: {cellId}", "OK");
-#endif
+        }
+    }
+
+    private async void btnCerrarSesion_Clicked(object sender, EventArgs e)
+    {
+        bool confirm = await DisplayAlert("Cerrar sesión", "¿Estás seguro de que deseas cerrar sesión?", "Sí", "Cancelar");
+        if (confirm)
+        {
+            Preferences.Clear();
+            Application.Current.Windows[0].Page = new NavigationPage(new LoginPage());
         }
     }
 }
