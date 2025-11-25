@@ -1,124 +1,176 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Hello_World.MainPage">
+             x:Class="Hello_World.MainPage"
+             BackgroundColor="#111827"
+             NavigationPage.HasNavigationBar="False">
+
     <ContentPage.Content>
-        <StackLayout>
-            <TableView Intent="Menu" HasUnevenRows="True">
+        <StackLayout Padding="0,10,0,0">
+
+          
+            <TableView Intent="Menu" HasUnevenRows="True" BackgroundColor="Transparent">
                 <TableRoot>
-                    <!-- Sección para el título de la app -->
+
                     <TableSection>
-                        <ViewCell Height="95">
-                            <StackLayout Margin="15,15,15,15">
-                                <Label Text="Tienda de Videojuegos v1.0" FontAttributes="Bold" FontSize="24" VerticalOptions="Center"/>
-                            </StackLayout>
+                        <ViewCell>
+                            <Frame Margin="15,10" Padding="20" CornerRadius="15" HasShadow="True" BorderColor="Transparent">
+                                <Frame.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="#2563EB" Offset="0.1" />
+                                        <GradientStop Color="#9333EA" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                                <StackLayout>
+                                    <Label Text="GAME STORE" TextColor="White" Opacity="0.8" FontSize="12" CharacterSpacing="2"/>
+                                    <Label Text="Bienvenido Player 1" TextColor="White" FontAttributes="Bold" FontSize="22"/>
+                                </StackLayout>
+                            </Frame>
                         </ViewCell>
                     </TableSection>
 
-                <!-- Sección para las opciones del menú -->
-                <TableSection>
-                    <!-- Opción 1: Juegos de Acción -->
-                    <ViewCell Height="65">
-                        <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
-                            <Image Source="consola" HeightRequest="60" WidthRequest="60"/>
-                            <Label Text="Juegos de Acción" FontAttributes="Bold" VerticalOptions="Center"/>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="ActionGames"/>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-                    </ViewCell>
+             
+                    <TableSection Title="CATEGORÍAS">
 
-                    <!-- Opción 2: Juegos de Aventura -->
-                    <ViewCell Height="65">
-                        <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
-                            <Image Source="espadas" HeightRequest="60" WidthRequest="60"/>
-                            <Label Text="Juegos de Aventura" FontAttributes="Bold" VerticalOptions="Center"/>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="AdventureGames"/>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-                    </ViewCell>
+                        <!-- Opción 1: Juegos de Acción -->
+                        <ViewCell>
+                            <Frame BackgroundColor="#1F2937" CornerRadius="12" Margin="15,5" Padding="15" BorderColor="#374151" HasShadow="False">
+                                <Grid ColumnDefinitions="50,*,30">
+                                    <Image Grid.Column="0" Source="consola" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+                                    <Label Grid.Column="1" Text="Juegos de Acción" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0"/>
+                                    <Label Grid.Column="2" Text="&#x276F;" TextColor="#6B7280" FontSize="18" VerticalOptions="Center" HorizontalOptions="End"/>
 
-                    <!-- Opción 3: Juegos de Estrategia -->
-                    <ViewCell Height="65">
-                        <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
-                            <Image Source="resoluciondeproblemas" HeightRequest="60" WidthRequest="60"/>
-                            <Label Text="Juegos de Estrategia" FontAttributes="Bold" VerticalOptions="Center"/>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="StrategyGames"/>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-                    </ViewCell>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="ActionGames"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
 
-                    <!-- Opción 4: Juegos de Deportes -->
-                    <ViewCell Height="65">
-                        <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
-                            <Image Source="deportesconbalones" HeightRequest="60" WidthRequest="60"/>
-                            <Label Text="Juegos de Deportes" FontAttributes="Bold" VerticalOptions="Center"/>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="SportsGames"/>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-                    </ViewCell>
+                        <!-- Opción 2: Juegos de Aventura -->
+                        <ViewCell>
+                            <Frame BackgroundColor="#1F2937" CornerRadius="12" Margin="15,5" Padding="15" BorderColor="#374151" HasShadow="False">
+                                <Grid ColumnDefinitions="50,*,30">
+                                    <Image Grid.Column="0" Source="espadas" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+                                    <Label Grid.Column="1" Text="Juegos de Aventura" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0"/>
+                                    <Label Grid.Column="2" Text="&#x276F;" TextColor="#6B7280" FontSize="18" VerticalOptions="Center" HorizontalOptions="End"/>
 
-                    <!-- Opción 5: Promociones -->
-                    <ViewCell Height="65">
-                        <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
-                            <Image Source="ofertaespecial" HeightRequest="60" WidthRequest="60"/>
-                            <Label Text="Promociones" FontAttributes="Bold" VerticalOptions="Center"/>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Promociones"/>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-                    </ViewCell>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="AdventureGames"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
 
-                    <!-- Opción 6: Carrito -->
-                    <ViewCell Height="65">
-                        <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
-                            <Image Source="carritodecompras" HeightRequest="60" WidthRequest="60"/>
-                            <Label Text="Carrito" FontAttributes="Bold" VerticalOptions="Center"/>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Cart"/>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-                    </ViewCell>
+                        <!-- Opción 3: Juegos de Estrategia -->
+                        <ViewCell>
+                            <Frame BackgroundColor="#1F2937" CornerRadius="12" Margin="15,5" Padding="15" BorderColor="#374151" HasShadow="False">
+                                <Grid ColumnDefinitions="50,*,30">
+                                    <Image Grid.Column="0" Source="resoluciondeproblemas" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+                                    <Label Grid.Column="1" Text="Juegos de Estrategia" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0"/>
+                                    <Label Grid.Column="2" Text="&#x276F;" TextColor="#6B7280" FontSize="18" VerticalOptions="Center" HorizontalOptions="End"/>
 
-                    <!-- Opción 7: Perfil -->
-                    <ViewCell Height="65">
-                        <StackLayout Margin="15,15,15,15" Orientation="Horizontal">
-                            <Image Source="profile" HeightRequest="60" WidthRequest="60"/>
-                            <Label Text="Perfil" FontAttributes="Bold" VerticalOptions="Center"/>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Profile"/>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-                    </ViewCell>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="StrategyGames"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
 
-                    <!-- Opción 8: Soporte -->
-                        <ViewCell Height="65">
-                            <StackLayout Margin="15" Orientation="Horizontal">
-                                <Image Source="support" HeightRequest="60" WidthRequest="60"/>
-                                <Label Text="Soporte" FontAttributes="Bold" VerticalOptions="Center"/>
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Support"/>
-                                </StackLayout.GestureRecognizers>
-                            </StackLayout>
+                        <!-- Opción 4: Juegos de Deportes -->
+                        <ViewCell>
+                            <Frame BackgroundColor="#1F2937" CornerRadius="12" Margin="15,5" Padding="15" BorderColor="#374151" HasShadow="False">
+                                <Grid ColumnDefinitions="50,*,30">
+                                    <Image Grid.Column="0" Source="deportesconbalones" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+                                    <Label Grid.Column="1" Text="Juegos de Deportes" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0"/>
+                                    <Label Grid.Column="2" Text="&#x276F;" TextColor="#6B7280" FontSize="18" VerticalOptions="Center" HorizontalOptions="End"/>
+
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="SportsGames"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+
+                        <!-- Opción 5: Promociones -->
+                        <ViewCell>
+                            <Frame BackgroundColor="#1F2937" CornerRadius="12" Margin="15,5" Padding="15" BorderColor="#F59E0B" HasShadow="False">
+                                <Grid ColumnDefinitions="50,*,30">
+                                    <Image Grid.Column="0" Source="ofertaespecial" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+                                    <Label Grid.Column="1" Text="Ofertas Especiales" TextColor="#FCD34D" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0"/>
+                                    <Label Grid.Column="2" Text="&#x276F;" TextColor="#FCD34D" FontSize="18" VerticalOptions="Center" HorizontalOptions="End"/>
+
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Promociones"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
                         </ViewCell>
                     </TableSection>
+
+                    <TableSection Title="MI CUENTA">
+
+                        <!-- Opción 6: Carrito -->
+                        <ViewCell>
+                            <Frame BackgroundColor="#1F2937" CornerRadius="12" Margin="15,5" Padding="15" BorderColor="#374151" HasShadow="False">
+                                <Grid ColumnDefinitions="50,*,30">
+                                    <Image Grid.Column="0" Source="carritodecompras" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+                                    <Label Grid.Column="1" Text="Ver Carrito" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0"/>
+                                    <Label Grid.Column="2" Text="&#x276F;" TextColor="#6B7280" FontSize="18" VerticalOptions="Center" HorizontalOptions="End"/>
+
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Cart"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+
+                        <!-- Opción 7: Perfil -->
+                        <ViewCell>
+                            <Frame BackgroundColor="#1F2937" CornerRadius="12" Margin="15,5" Padding="15" BorderColor="#374151" HasShadow="False">
+                                <Grid ColumnDefinitions="50,*,30">
+                                    <Image Grid.Column="0" Source="profile" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+                                    <Label Grid.Column="1" Text="Mi Perfil" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0"/>
+                                    <Label Grid.Column="2" Text="&#x276F;" TextColor="#6B7280" FontSize="18" VerticalOptions="Center" HorizontalOptions="End"/>
+
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Profile"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+
+                        <!-- Opción 8: Soporte -->
+                        <ViewCell>
+                            <Frame BackgroundColor="#1F2937" CornerRadius="12" Margin="15,5" Padding="15" BorderColor="#374151" HasShadow="False">
+                                <Grid ColumnDefinitions="50,*,30">
+                                    <Image Grid.Column="0" Source="support" HeightRequest="40" WidthRequest="40" Aspect="AspectFit"/>
+                                    <Label Grid.Column="1" Text="Soporte Técnico" TextColor="White" FontAttributes="Bold" VerticalOptions="Center" Margin="10,0"/>
+                                    <Label Grid.Column="2" Text="&#x276F;" TextColor="#6B7280" FontSize="18" VerticalOptions="Center" HorizontalOptions="End"/>
+
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnCellTapped" CommandParameter="Support"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </TableSection>
+
                 </TableRoot>
             </TableView>
 
             <!-- Botón de Cerrar Sesión -->
             <Button x:Name="btnCerrarSesion"
-                    Text="Cerrar Sesión"
+                    Text="CERRAR SESIÓN"
                     Clicked="btnCerrarSesion_Clicked"
                     ImageSource="cerrarsesion.png"
-                    HorizontalOptions="Center"
-                    BackgroundColor="Red"
+                    BackgroundColor="#EF4444" 
                     TextColor="White"
+                    CornerRadius="25"
                     FontAttributes="Bold"
-                    Margin="15"
-                    HeightRequest="50"/>
+                    Margin="20,10,20,20"
+                    HeightRequest="50"
+                    Shadow="{Shadow Brush=Red, Offset='0,4', Opacity=0.5}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

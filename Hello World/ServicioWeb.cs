@@ -13,7 +13,7 @@ namespace MenuPrincipal
         private ServicioWeb() { }
 
         // Ajusta a tu IP/carpeta XAMPP
-        private const string _base = "http://192.168.100.7/MAUIWeb/";
+        private const string _base = "http://ajusta_a_tu_ip/MAUIWeb/";
         public string Domain => _base;
 
         // APIs (carpeta /api en tu servidor)
@@ -39,11 +39,6 @@ namespace MenuPrincipal
         public string UrlPingLigero => $"{Domain}api/ping.php";
 
     }
-
-    //public string dominio { get; } = "http://10.150.13.13/php/";
-    //public string dominio { get; } = "http://10.150.31.117/MAUIWeb/";
-    //public string dominio { get; } = "http://192.168.1.15/php/";
-    //public string dominio { get; } = "http://192.168.1.9/php/";
 }
     
 
